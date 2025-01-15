@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+25&family=Outfit:wght@100..900&family=Prata&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Global Variables */
+
+* {
+    font-family: Outfit
+}
+
+.light-text {
+    color: #565656;
+}
+
+.bg-yellow-only {
+    background-color: #F7DB3B
+}
+
+.bg-yellow {
+    background-color: #F7DB3B
+}
+
+.bg-yellow-light {
+    background-color: #f7db3b5e
+}
+
+.text-yellow {
+    color: #F7DB3B
+}
+
+.bg-yellow:hover {
+    background-color: black;
+    color: white;
+}
+
+.bg-trans-black {
+    background-color: rgba(0, 0, 0, 0.449);
+}
+
+a.active {
+    background-color: #F7DB3B;
+    border-color: #F7DB3B;
+    color: black
+}
