@@ -9,9 +9,8 @@ const Hero = () => {
             <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold md:mb-4 sm:mb-2 mt-10">SCHNITZEREIEN</h1>
             <p className="md:text-5xl sm:text-4xl text-3xl italic font-light mb-8">Christoph Müller</p>
             <p className="max-w-2xl light-text mb-8">
-                Schön dass ihr hergefunden habt. Hier geht es um eines meiner Hobbys,
-                dem Schnitzen, speziell das Herausarbeiten verschiedenster Fratzen
-                für Perchtenmasken bereitet mir besondere Freude!
+                Hier entsteht Kunst aus dem wunderbaren Naturstoff Holz. Mit kreativer Handarbeit wird aus jedem Stamm ein echtes Unikat geschöpft. Bist auch du auf der Suche nach so einem Einzelstück? Hier bist du genau richtig!
+
             </p>
             <div className="flex  space-x-4">
 

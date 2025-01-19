@@ -8,7 +8,7 @@ import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 import Impressum from './pages/Impressum';
 import Datenschutzerkl from './pages/Datenschutzerkl';
-
+import ScrollToTop from "./components/ScrollToTop";
 
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
   return (
     <div>
       <Router>
+        <ScrollToTop />
         <Navbar />
         <div className='px-4 sm:px-[5ve] md:px-[7vw] lg:px-[9vw]'>
           <Routes>
