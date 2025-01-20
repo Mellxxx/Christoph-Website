@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import placeholder from '../assets/placeholder.jpg'
-import placeholder2 from '../assets/placeholder2.jpg'
 import ContactButton from '../components/ContactButton'
 import close from '../assets/close.png'
 import leftarr from '../assets/Arrow left.png'
@@ -29,7 +27,28 @@ import img20 from '../assets/20.webp'
 const Gallery = () => {
 
     // Image Array
-    const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20];
+    const images = [
+        { src: img1, alt: "Modernes Webdesign für ein Café mit dunkler Farbpalette" },
+        { src: img2, alt: "Minimalistische Portfolio-Website mit Fokus auf UX/UI" },
+        { src: img3, alt: "E-Commerce-Shop für Mode mit einer eleganten Produktansicht" },
+        { src: img4, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img5, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img6, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img7, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img8, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img9, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img10, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img11, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img12, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img13, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img14, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img15, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img16, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img17, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img18, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img19, alt: "Bildergalerie mit einer modernen Farbpalette" },
+        { src: img20, alt: "Bildergalerie mit einer modernen Farbpalette" },
+    ];
 
     // State to track the index of the currently selected image. `null` means no image is selected.
     const [currentIndex, setCurrentIndex] = useState(null);
@@ -64,14 +83,15 @@ const Gallery = () => {
 
             {/* Gallery Grid */}
             <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4'>
-                {images.map((imageSrc, index) => (
-                    <img
-                        key={index}
-                        src={imageSrc}
-                        alt=""
-                        onClick={() => setCurrentIndex(index)}
-                        className="cursor-pointer"
-                    />
+                {images.map((image, index) => (
+                    <div key={index} className='aspect-square overflow-hidden cursor-pointer'>
+                        <img
+                            src={image.src}
+                            alt={image.alt}
+                            onClick={() => setCurrentIndex(index)}
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
                 ))}
             </div>
 
@@ -114,7 +134,7 @@ const Gallery = () => {
                         </button>
 
                         {/* Enlarged Image */}
-                        <img src={images[currentIndex]} alt="" className='max-h-screen max-w-full' />
+                        <img src={images[currentIndex].src} alt={images[currentIndex].alt} className='max-h-screen max-w-full' />
                     </div>
                 </div>
             )}

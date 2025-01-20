@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import Impressum from './pages/Impressum';
 import Datenschutzerkl from './pages/Datenschutzerkl';
 import CookieConsent from './components/CookieConsent';
+import ScrollToTop from './components/ScrollToTop';
 import { initGA, logPageView } from './utils/analytics';
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
 
   return (
     <div>
+      <ScrollToTop />
       <Navbar />
       <div className='px-4 sm:px-[5ve] md:px-[7vw] lg:px-[9vw]'>
         <Routes>

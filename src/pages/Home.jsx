@@ -6,6 +6,7 @@ import placeholder from '../assets/placeholder.jpg'
 import SmallGallery from '../components/SmallGallery'
 import ContactField from '../components/ContactField'
 import img11 from '../assets/11.webp'
+import MapComponent from '../components/MapContainer';
 
 const Home = () => {
     return (
@@ -66,6 +67,7 @@ const Home = () => {
             </div>
 
             <ContactField></ContactField>
+            <MapComponent></MapComponent>
         </div>
     )
 }
