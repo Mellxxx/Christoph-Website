@@ -32,7 +32,8 @@ const Footer = () => {
             <div className=''>
                 <h1></h1>
                 <hr className='color-[#F7DB3B]'></hr>
-                <p className='py-5 text-sm text-center text-white'>Copyright © 2024 All rights reserved</p>
+                <p className='mt-5 text-sm text-center text-white'>Copyright © 2024 All rights reserved</p>
+                <p className='pb-5 mt-2 text-sm text-center text-white'>powered by <a href="https://webaffinity.at/" target='_blank'>WEBAFFINITY</a></p>
             </div>
         </div>
     )

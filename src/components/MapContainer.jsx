@@ -11,7 +11,7 @@ const MapComponent = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             />
             <Marker position={position}>
-                <Popup>Hier ist dein Standort! 🗺️</Popup>
+                <Popup>Schnitzereien Müller </Popup>
             </Marker>
         </MapContainer>
     );
