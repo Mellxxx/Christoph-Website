@@ -1,42 +1,53 @@
 import React, { useState } from 'react'
-import { Link, NavLink } from "react-router-dom";
-import close from "../assets/close.png"
-import menu from "../assets/Menu.png"
+import { Link } from "react-router-dom";
+import Webaffinity from '../assets/Webaffinity.png'
 
 const Navbar = () => {
-
     const [visible, setVisible] = useState(false);
 
     return (
-        <nav className="text-white py-0">
-            <div className="container mx-auto flex justify-between items-center">
-                <ul className="hidden sm:flex space-x-0 mx-auto light-text">
-                    <NavLink to="/"><li className="hover:bg-[#F7DB3B] hover:text-black px-5 py-3 cursor-pointer">WILLKOMMEN</li></NavLink>
-                    <NavLink to="/meine-arbeit"><li className="hover:bg-[#F7DB3B] hover:text-black px-5 py-3 cursor-pointer">MEINE ARBEIT</li></NavLink>
-                    <NavLink to="/ueber-mich"><li className="hover:bg-[#F7DB3B] hover:text-black px-5 py-3 cursor-pointer">ÜBER MICH</li></NavLink>
-                    <NavLink to="/galerie"><li className="hover:bg-[#F7DB3B] hover:text-black px-5 py-3 cursor-pointer">GALERIE</li></NavLink>
-                    <NavLink to="/kontakt"><li className="hover:bg-[#F7DB3B] hover:text-black px-5 py-3 cursor-pointer">KONTAKT</li></NavLink>
-                </ul>
-
-                <img onClick={() => setVisible(true)} src={menu} className="w-5 cursor-pointer sm:hidden absolute right-5 top-5 w-8 h-8" alt="" />
-
-                { /* sidebar menu for smaller screen */}
-                <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? "w-full" : "w-0"}`}>
-                    <div className="flex flex-col text-gray-600">
-                        <div onClick={() => setVisible(false)} className="flex item-center gap-4 p-3 cursor-pointer">
-                            <img className="h-4 rotate-180 w-8 h-8 " src={close} alt="" />
-                            <p>Zurück</p>
-                        </div>
-                        <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border border-[#F7DB3B]" to="/">WILLKOMMEN</NavLink>
-                        <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border border-[#F7DB3B]" to="/meine-arbeit">MEINE ARBEIT</NavLink>
-                        <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border border-[#F7DB3B]" to="/ueber-mich">ÜBER MICH</NavLink>
-                        <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border border-[#F7DB3B]" to="/galerie">GALERIE</NavLink>
-                        <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border border-[#F7DB3B]" to="/kontakt">KONTAKT</NavLink>
-                    </div>
+        <div className='z-[999]'>
+            {/* sm:px-[5ve] md:px-[7vw] lg:px-[9vw] */}
+            <header className="px-2  sm:px-[5ve] md:px-[5vw] lg:px-[9vw] ">
+                <div className="logo-with-text">
+                    <a href=""><img src={Webaffinity} alt="Logo Webaffinity"
+                        className="header-logo" /></a>
+                    <p className="logo-text">Web-Entwicklung und Design</p>
                 </div>
+                <nav className='hiddenNavbar'>
+                    <ul>
+                        <Link to={"/"}><li className="categorie animated-underline p-1"><a href="#hero">STARTSEITE</a></li></Link>
+                        <Link to={"/tools"}><li className="categorie animated-underline p-1"><a href="">TOOLS</a></li></Link>
+                        <Link to={"/blogs"}><li className="categorie animated-underline p-1"><a href="">KNOWLEDGE BASE</a></li></Link>
+                        <Link to={"/kontakt"}><li><a href="./contact.html" className="beratung-btn categorie">KOSTENLOSE BERATUNG</a></li></Link>
+                    </ul>
+                </nav>
+                <button
+                    className="xl:hidden p-2 rounded-md text-gray-700 absolute right-3 top-5"
+                    onClick={() => setVisible(!visible)}
+                >
+                    <i className="fas fa-bars text-2xl"></i>
+                </button>
+            </header>
+
+            {/* Hamburger Menü (Mobil) */}
+
+
+            {/* Mobile Dropdown Menu */}
+            <div className={`fixed inset-0 bg-white z-50 flex flex-col items-center justify-center space-y-6 transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"}`}>
+                <button
+                    className="absolute top-5 right-5 text-3xl"
+                    onClick={() => setVisible(false)}
+                >
+                    &times;
+                </button>
+                <Link to="/" className="text-2xl" onClick={() => setVisible(false)}>STARTSEITE</Link>
+                <Link to="/tools" className="text-2xl" onClick={() => setVisible(false)}>TOOLS</Link>
+                {/* <Link to="/blogs" className="text-2xl" onClick={() => setVisible(false)}>KNOWLEDGE BASE</Link> */}
+                <Link to="/kontakt" className="text-2xl p-2 border-2 border-black rounded-lg" onClick={() => setVisible(false)}>KOSTENLOSE BERATUNG</Link>
             </div>
-        </nav>
-    )
+        </div>
+    );
 }
 
-export default Navbar
+export default Navbar;

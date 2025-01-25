@@ -1,5 +1,4 @@
 import React from 'react'
-import SmallGallery from '../components/SmallGallery'
 import placeholder from '../assets/placeholder.jpg'
 import ContactButton from '../components/ContactButton'
 
@@ -34,7 +33,6 @@ const MyWork = () => {
             <div className="flex  space-x-4">
                 <ContactButton></ContactButton>
             </div>
-            <SmallGallery></SmallGallery>
         </div>
     )
 }
